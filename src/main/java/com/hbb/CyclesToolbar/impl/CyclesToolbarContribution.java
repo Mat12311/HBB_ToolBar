@@ -15,9 +15,11 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-
+import com.ur.urcap.api.contribution.ToolbarInstalationNodeContribution ;
+import com.ur.urcap.api.contribution.toolbar.ToolbarAPIProvider;
 import com.ur.urcap.api.contribution.toolbar.ToolbarContext;
 import com.ur.urcap.api.contribution.toolbar.swing.SwingToolbarContribution;
+import com.ur.urcap.api.domain.script.ScriptWriter;
 
 public class CyclesToolbarContribution implements SwingToolbarContribution {
 	
@@ -30,9 +32,11 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	private JSlider chchSlider = new JSlider();
 	
 	private final ToolbarContext context;
+	private ToolbarAPIProvider api ;
 	
 	CyclesToolbarContribution(ToolbarContext context) {
 		this.context = context;
+		this.api = context.getAPIProvider();
 	}
 
 	@Override
@@ -62,7 +66,8 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 
 	@Override
 	public void openView() {
-		// TODO Auto-generated method stub
+	
+		getInstallation().checkInstal();
 		
 	}
 
@@ -70,6 +75,10 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	public void closeView() {
 		// TODO Auto-generated method stub
 		
+	}
+	
+	private ToolbarInstalationNodeContribution getInstallation() {
+		return api.getApplicationAPI().getInstallationNode(ToolbarInstalationNodeContribution.class);
 	}
 	
 	private Box createDescrption(String desc) {
