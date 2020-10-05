@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1601636861201
+Bnd-LastModified: 1601894458875
 Build-Jdk: 1.8.0_265
 Built-By: ur
 Bundle-Activator: com.hbb.CyclesToolbar.impl.Activator
@@ -15,15 +15,19 @@ Bundle-Vendor: URCaps R us Inc.
 Bundle-Version: 1.0.0.SNAPSHOT
 Created-By: Apache Maven Bundle Plugin
 Export-Package: com.ur.urcap.api.contribution;version="1.8.0";uses:="com
- .ur.urcap.api.contribution.program.configuration.debugging,com.ur.urcap
- .api.domain,com.ur.urcap.api.domain.data,com.ur.urcap.api.domain.device
- ,com.ur.urcap.api.domain.script"
+ .ur.urcap.api.contribution.installation,com.ur.urcap.api.contribution.i
+ nstallation.swing,com.ur.urcap.api.contribution.program.configuration.d
+ ebugging,com.ur.urcap.api.domain,com.ur.urcap.api.domain.data,com.ur.ur
+ cap.api.domain.device,com.ur.urcap.api.domain.script,javax.swing,org.os
+ gi.framework"
 Import-Package: com.ur.urcap.api.contribution;version="[1.8,2)",com.ur.u
- rcap.api.contribution.program.configuration.debugging;version="[1.7,2)"
- ,com.ur.urcap.api.contribution.toolbar;version="[1.7,2)",com.ur.urcap.a
- pi.contribution.toolbar.swing;version="[1.7,2)",com.ur.urcap.api.domain
- ;version="[1.9,2)",com.ur.urcap.api.domain.data;version="[1.9,2)",com.u
- r.urcap.api.domain.device;version="[1.10,2)",com.ur.urcap.api.domain.sc
- ript;version="[1.7,2)",javax.swing,javax.swing.event,org.osgi.framework
- ;version="[1.6,2)"
+ rcap.api.contribution.installation;version="[1.7,2)",com.ur.urcap.api.c
+ ontribution.installation.swing;version="[1.7,2)",com.ur.urcap.api.contr
+ ibution.program.configuration.debugging;version="[1.7,2)",com.ur.urcap.
+ api.contribution.toolbar;version="[1.7,2)",com.ur.urcap.api.contributio
+ n.toolbar.swing;version="[1.7,2)",com.ur.urcap.api.domain;version="[1.9
+ ,2)",com.ur.urcap.api.domain.data;version="[1.9,2)",com.ur.urcap.api.do
+ main.device;version="[1.10,2)",com.ur.urcap.api.domain.script;version="
+ [1.7,2)",javax.swing,javax.swing.event,org.osgi.framework;version="[1.6
+ ,2)"
 Tool: Bnd-2.1.0.20130426-122213

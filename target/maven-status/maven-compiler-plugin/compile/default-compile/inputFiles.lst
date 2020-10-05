@@ -1,4 +1,7 @@
 /home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/hbb/CyclesToolbar/impl/CyclesToolbarContribution.java
 /home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/hbb/CyclesToolbar/impl/CyclesToolbarService.java
 /home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/hbb/CyclesToolbar/impl/Activator.java
+/home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/ur/urcap/api/contribution/ToolbarInstalationNodeView.java
+/home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/ur/urcap/api/contribution/Activator.java
+/home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/ur/urcap/api/contribution/ToolbarInstalationNodeService.java
 /home/ur/workspace/com.hbb.CyclesToolbar/src/main/java/com/ur/urcap/api/contribution/ToolbarInstalationNodeContribution.java

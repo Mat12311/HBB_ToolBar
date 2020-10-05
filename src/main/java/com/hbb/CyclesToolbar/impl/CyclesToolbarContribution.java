@@ -69,6 +69,9 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	
 		getInstallation().checkInstal();
 		
+		//test
+		//this.api.getApplicationAPI().getInstallationNode(ToolbarInstalationNodeContribution.class).checkInstal();;
+		
 	}
 
 	@Override
