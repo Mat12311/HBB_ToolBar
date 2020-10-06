@@ -4,7 +4,7 @@ import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 
 import com.hbb.CyclesToolbar.impl.CyclesToolbarService;
-import com.ur.urcap.api.contribution.ToolbarInstalationNodeService;
+import com.hbb.CyclesToolbar.impl.ToolbarInstalationNodeService;
 import com.ur.urcap.api.contribution.installation.swing.SwingInstallationNodeService;
 import com.ur.urcap.api.contribution.toolbar.swing.SwingToolbarService;
 
@@ -17,7 +17,7 @@ public class Activator implements BundleActivator {
 	public void start(final BundleContext bundleContext) throws Exception {
 		System.out.println("Activator says Hello World!");
 		bundleContext.registerService(SwingToolbarService.class, new CyclesToolbarService(), null);
-		//bundleContext.registerService(SwingInstallationNodeService.class, new ToolbarInstalationNodeService(), null);
+		bundleContext.registerService(SwingInstallationNodeService.class, new ToolbarInstalationNodeService(), null);
 	}
 
 	@Override

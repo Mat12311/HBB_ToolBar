@@ -1,7 +1,8 @@
-package com.ur.urcap.api.contribution;
+package com.hbb.CyclesToolbar.impl;
 
 import javax.swing.JPanel;
 
+import com.ur.urcap.api.contribution.ViewAPIProvider;
 import com.ur.urcap.api.contribution.installation.swing.SwingInstallationNodeView;
 
 public class ToolbarInstalationNodeView implements SwingInstallationNodeView<ToolbarInstalationNodeContribution> {

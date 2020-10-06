@@ -1,5 +1,5 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1601894458875
+Bnd-LastModified: 1601977529990
 Build-Jdk: 1.8.0_265
 Built-By: ur
 Bundle-Activator: com.hbb.CyclesToolbar.impl.Activator

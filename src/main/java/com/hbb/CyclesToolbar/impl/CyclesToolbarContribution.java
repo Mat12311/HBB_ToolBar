@@ -15,7 +15,7 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import com.ur.urcap.api.contribution.ToolbarInstalationNodeContribution ;
+//import com.ur.urcap.api.contribution.ToolbarInstalationNodeContribution ;
 import com.ur.urcap.api.contribution.toolbar.ToolbarAPIProvider;
 import com.ur.urcap.api.contribution.toolbar.ToolbarContext;
 import com.ur.urcap.api.contribution.toolbar.swing.SwingToolbarContribution;
@@ -31,12 +31,20 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	private JSlider pickSlider = new JSlider();
 	private JSlider chchSlider = new JSlider();
 	
+	public int air=0;
+	public int pick=0;
+	public int chch=0;
+	
 	private final ToolbarContext context;
 	private ToolbarAPIProvider api ;
 	
 	CyclesToolbarContribution(ToolbarContext context) {
 		this.context = context;
 		this.api = context.getAPIProvider();
+	}
+	
+	public int getAir() {
+		return air;
 	}
 
 	@Override
@@ -121,14 +129,14 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 			public void actionPerformed(ActionEvent e) {
 				int txt= Integer.parseInt(label.getText());
 				txt++;
-				/*
+				
 				if(label==airTextLabel) {
-					contribution.onAirValueChange(txt);
+					air =txt;
 					if(txt>5) txt=5;
 				}
-				if(label==pickTextLabel)contribution.onPickValueChange(txt);
-				if(label==chchTextLabel)contribution.onCHCHValueChange(txt);
-				*/
+				if(label==pickTextLabel)pick=txt;
+				if(label==chchTextLabel)chch=txt;
+				
 				slider.setValue(txt);
 				label.setText(String.valueOf(txt));
 				
@@ -144,13 +152,13 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 			public void actionPerformed(ActionEvent e) {
 				int txt= Integer.parseInt(label.getText());
 				txt--;
-				/*
+				
 				if(txt<0) txt=0;
 				slider.setValue(txt);
-				contribution.onAirValueChange(txt);
-				if(label==pickTextLabel)contribution.onPickValueChange(txt);
-				if(label==chchTextLabel)contribution.onCHCHValueChange(txt);
-				*/
+				if(label==airTextLabel)air=txt;
+				if(label==pickTextLabel)pick= txt;
+				if(label==chchTextLabel)chch=txt;
+				
 				label.setText(String.valueOf(txt));
 				
 				
@@ -185,11 +193,11 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				int newValue = slider.getValue();
-				/*
-				if(label==airTextLabel)contribution.onAirValueChange(newValue);
-				if(label==pickTextLabel)contribution.onPickValueChange(newValue);
-				if(label==chchTextLabel)contribution.onCHCHValueChange(newValue);
-				*/
+				
+				if(label==airTextLabel)air= newValue;
+				if(label==pickTextLabel)pick=newValue;
+				if(label==chchTextLabel)chch=newValue;
+				
 				label.setText(String.valueOf(newValue));
 				
 				
