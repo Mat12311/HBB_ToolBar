@@ -19,7 +19,7 @@ import javax.swing.event.ChangeListener;
 import com.ur.urcap.api.contribution.toolbar.ToolbarAPIProvider;
 import com.ur.urcap.api.contribution.toolbar.ToolbarContext;
 import com.ur.urcap.api.contribution.toolbar.swing.SwingToolbarContribution;
-import com.ur.urcap.api.domain.script.ScriptWriter;
+
 
 public class CyclesToolbarContribution implements SwingToolbarContribution {
 	
@@ -46,6 +46,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	public int getAir() {
 		return air;
 	}
+	
 
 	@Override
 	public void buildUI(JPanel panel) {
@@ -75,10 +76,9 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	@Override
 	public void openView() {
 	
-		getInstallation().checkInstal();
+		getInstallation().checkInstal(air, pick,chch);
 		
-		//test
-		//this.api.getApplicationAPI().getInstallationNode(ToolbarInstalationNodeContribution.class).checkInstal();;
+	
 		
 	}
 
@@ -140,7 +140,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				slider.setValue(txt);
 				label.setText(String.valueOf(txt));
 				
-				
+				getInstallation().checkInstal(air,pick,chch);
 				
 			}
 		});
@@ -161,7 +161,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				
 				label.setText(String.valueOf(txt));
 				
-				
+				getInstallation().checkInstal(air,pick,chch);
 				
 			}
 		});
@@ -199,6 +199,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				if(label==chchTextLabel)chch=newValue;
 				
 				label.setText(String.valueOf(newValue));
+				getInstallation().checkInstal(air,pick,chch);
 				
 				
 			}
