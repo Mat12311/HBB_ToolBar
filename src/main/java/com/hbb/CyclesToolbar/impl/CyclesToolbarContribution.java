@@ -15,7 +15,7 @@ import javax.swing.JSlider;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-//import com.ur.urcap.api.contribution.ToolbarInstalationNodeContribution ;
+
 import com.ur.urcap.api.contribution.toolbar.ToolbarAPIProvider;
 import com.ur.urcap.api.contribution.toolbar.ToolbarContext;
 import com.ur.urcap.api.contribution.toolbar.swing.SwingToolbarContribution;
@@ -43,10 +43,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 		this.api = context.getAPIProvider();
 	}
 	
-	public int getAir() {
-		return air;
-	}
-	
+
 
 	@Override
 	public void buildUI(JPanel panel) {
@@ -134,8 +131,15 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 					air =txt;
 					if(txt>5) txt=5;
 				}
-				if(label==pickTextLabel)pick=txt;
-				if(label==chchTextLabel)chch=txt;
+				if(label==pickTextLabel) {
+					pick=txt;
+					if(txt>20) txt=20;
+				}
+				
+				if(label==chchTextLabel) {
+					chch=txt;
+					if(txt>50) txt=50;
+				}
 				
 				slider.setValue(txt);
 				label.setText(String.valueOf(txt));

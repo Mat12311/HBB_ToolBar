@@ -15,9 +15,9 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	private final ToolbarInstalationNodeView view;
 	private CyclesToolbarContribution tool;
 	private final DataModel model;
-	private int airT=666;
-	private int pickT=666;
-	private int chchT=666;
+	private int airT=0;
+	private int pickT=0;
+	private int chchT=0;
 	
 	public ToolbarInstalationNodeContribution(InstallationAPIProvider apiProvider,
 			ToolbarInstalationNodeView view, DataModel model) {
@@ -39,10 +39,10 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 
 	@Override
 	public void generateScript(ScriptWriter writer) {
-		writer.appendLine("global hbbtest_bar = "+111+"");
-		writer.appendLine("global hbb3t_air = "+airT+"");
-		writer.appendLine("global hbb3t_pick = "+pickT+"");
-		writer.appendLine("global hbb3t_chch = "+chchT+"");
+	
+		writer.appendLine("global cpl_airT = "+airT+"");
+		writer.appendLine("global cpl_pickT = "+pickT+"");
+		writer.appendLine("global cpl_chchT = "+chchT+"");
 		
 				
 	}
