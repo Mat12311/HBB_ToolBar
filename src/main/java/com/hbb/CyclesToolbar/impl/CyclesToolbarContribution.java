@@ -73,16 +73,35 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	@Override
 	public void openView() {
 	
-		getInstallation().checkInstal(air, pick,chch);
+//	
+		airTextLabel.setText(String.valueOf( getInstallation().getAir()));
+		pickTextLabel.setText(String.valueOf( getInstallation().getPICK()));
+		chchTextLabel.setText(String.valueOf( getInstallation().getCHCH()));
 		
-	
+		airSlider.setValue(getInstallation().getAir());
+		pickSlider.setValue(getInstallation().getPICK());
+		chchSlider.setValue(getInstallation().getCHCH());
+		//getInstallation().checkInstal(air, pick,chch);
 		
 	}
 
 	@Override
 	public void closeView() {
-		// TODO Auto-generated method stub
 		
+			//getInstallation().checkInstal(air, pick,chch);
+			
+//			airTextLabel.setText(String.valueOf( getInstallation().airT));
+//			pickTextLabel.setText(String.valueOf( getInstallation().pickT));
+//			chchTextLabel.setText(String.valueOf( getInstallation().chchT));
+//			
+//			airSlider.setValue(getInstallation().airT);
+//			pickSlider.setValue(getInstallation().pickT);
+//			chchSlider.setValue(getInstallation().chchT);
+			//test
+//			airSlider.setValue(0);
+//			pickSlider.setValue(0);
+//			chchSlider.setValue(0);
+			
 	}
 	
 	private ToolbarInstalationNodeContribution getInstallation() {
@@ -128,23 +147,26 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				txt++;
 				
 				if(label==airTextLabel) {
-					air =txt;
+					//air =txt;
+					getInstallation().onAirValueChange(txt);
 					if(txt>5) txt=5;
 				}
 				if(label==pickTextLabel) {
-					pick=txt;
+					//pick=txt;
+					getInstallation().onPickValueChange(txt);
 					if(txt>20) txt=20;
 				}
 				
 				if(label==chchTextLabel) {
-					chch=txt;
+					//chch=txt;
+					getInstallation().onCHCHValueChange(txt);
 					if(txt>50) txt=50;
 				}
 				
 				slider.setValue(txt);
 				label.setText(String.valueOf(txt));
 				
-				getInstallation().checkInstal(air,pick,chch);
+				//getInstallation().checkInstal(air,pick,chch);
 				
 			}
 		});
@@ -158,14 +180,24 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				txt--;
 				
 				if(txt<0) txt=0;
-				slider.setValue(txt);
-				if(label==airTextLabel)air=txt;
-				if(label==pickTextLabel)pick= txt;
-				if(label==chchTextLabel)chch=txt;
+				
+				if(label==airTextLabel) {
+					//air=txt;
+					getInstallation().onAirValueChange(txt);
+				
+				}
+				if(label==pickTextLabel) {
+					//pick= txt;
+					getInstallation().onPickValueChange(txt);
+				}
+				if(label==chchTextLabel) {
+					//chch=txt;
+					getInstallation().onCHCHValueChange(txt);
+				}
 				
 				label.setText(String.valueOf(txt));
-				
-				getInstallation().checkInstal(air,pick,chch);
+				slider.setValue(txt);
+				//getInstallation().checkInstal(air,pick,chch);
 				
 			}
 		});
@@ -198,12 +230,21 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 			public void stateChanged(ChangeEvent e) {
 				int newValue = slider.getValue();
 				
-				if(label==airTextLabel)air= newValue;
-				if(label==pickTextLabel)pick=newValue;
-				if(label==chchTextLabel)chch=newValue;
+				if(label==airTextLabel) {
+					//air= newValue;
+					getInstallation().onAirValueChange(newValue);
+				}
+				if(label==pickTextLabel) {
+					//pick=newValue;
+					getInstallation().onPickValueChange(newValue);
+				}
+				if(label==chchTextLabel) {
+					//chch=newValue;
+					getInstallation().onCHCHValueChange(newValue);
+					}
 				
 				label.setText(String.valueOf(newValue));
-				getInstallation().checkInstal(air,pick,chch);
+				//getInstallation().checkInstal(air,pick,chch);
 				
 				
 			}
