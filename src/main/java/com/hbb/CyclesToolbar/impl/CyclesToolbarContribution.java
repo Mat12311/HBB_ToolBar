@@ -23,17 +23,17 @@ import com.ur.urcap.api.contribution.toolbar.swing.SwingToolbarContribution;
 
 public class CyclesToolbarContribution implements SwingToolbarContribution {
 	
-	private JLabel airTextLabel = new JLabel("0");
-	private JLabel pickTextLabel = new JLabel("0");
-	private JLabel chchTextLabel = new JLabel("0");
+	private JLabel airTextLabel = new JLabel();
+	private JLabel pickTextLabel = new JLabel();
+	private JLabel chchTextLabel = new JLabel();
 	
 	private JSlider airSlider = new JSlider();
 	private JSlider pickSlider = new JSlider();
 	private JSlider chchSlider = new JSlider();
 	
-	public int air=0;
-	public int pick=0;
-	public int chch=0;
+//	public int air=0;
+//	public int pick=0;
+//	public int chch=0;
 	
 	private final ToolbarContext context;
 	private ToolbarAPIProvider api ;

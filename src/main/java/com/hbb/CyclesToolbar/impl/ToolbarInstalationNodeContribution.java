@@ -19,16 +19,16 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	private final DataModel model;
 	
 	
-	public int airT=0;
-	public int pickT=0;
-	public int chchT=0;
+	//public int airT=0;
+	//public int pickT=0;
+	//public int chchT=0;
 	
 	private static final String AIR_KEY = "air";
-	private static final int DEFAULT_AIR = 0;
+	private static final int DEFAULT_AIR = 2;
 	private static final String PICK_KEY = "pick";
-	private static final int DEFAULT_PICK = 0;
+	private static final int DEFAULT_PICK = 5;
 	private static final String CHCH_KEY = "chch";
-	private static final int DEFAULT_CHCH = 0;
+	private static final int DEFAULT_CHCH = 10;
 	
 	public ToolbarInstalationNodeContribution(InstallationAPIProvider apiProvider,
 			ToolbarInstalationNodeView view, DataModel model) {
@@ -38,34 +38,40 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 		
 	}
 	
-	public void onAirValueChange(final int val) {
-		
+	public void onAirValueChange(int val) {
+		System.out.println("AIR Change"+val);
 				model.set(AIR_KEY,val);
 	}
 	
 	public int getAir() {
-		return model.get(AIR_KEY,DEFAULT_AIR);
+		int val= model.get(AIR_KEY,DEFAULT_AIR);
+		System.out.println("AIR Get"+val);
+		return val;
 	}
 	
-	public void onPickValueChange(final int val) {
-	
+	public void onPickValueChange(int val) {
+		System.out.println("Pick Change"+val);
 				model.set(PICK_KEY,val);
 				
 		
 	}
 	
 	public int getPICK() {
-		return model.get(PICK_KEY,DEFAULT_PICK);
+		int val = model.get(PICK_KEY,DEFAULT_PICK);
+		System.out.println("Pick Get"+val);
+		return val;
 	}
 	
-	public void onCHCHValueChange(final int val) {
-	
+	public void onCHCHValueChange(int val) {
+		System.out.println("CHCH Change"+val);
 				model.set(CHCH_KEY,val);
 				
 	}
 	
 	public int getCHCH() {
-		return model.get(CHCH_KEY,DEFAULT_CHCH);
+		int val= model.get(CHCH_KEY,DEFAULT_CHCH);
+		System.out.println("chch Get"+val);
+		return val;
 	}
 	
 	
@@ -97,13 +103,13 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	
 	
 	
-	public void checkInstal(int a, int b, int c) {
-		airT= a;
-		pickT= b;
-		chchT= c;
-	System.out.println("------Test ToolBarInst-----");
-
-	
-	}
+//	public void checkInstal(int a, int b, int c) {
+//		airT= a;
+//		pickT= b;
+//		chchT= c;
+//	System.out.println("------Test ToolBarInst-----");
+//
+//	
+//	}
 
 }
