@@ -19,9 +19,7 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	private final DataModel model;
 	
 	
-	//public int airT=0;
-	//public int pickT=0;
-	//public int chchT=0;
+
 	
 	private static final String AIR_KEY = "air";
 	private static final int DEFAULT_AIR = 2;
@@ -103,13 +101,6 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	
 	
 	
-//	public void checkInstal(int a, int b, int c) {
-//		airT= a;
-//		pickT= b;
-//		chchT= c;
-//	System.out.println("------Test ToolBarInst-----");
-//
-//	
-//	}
+
 
 }

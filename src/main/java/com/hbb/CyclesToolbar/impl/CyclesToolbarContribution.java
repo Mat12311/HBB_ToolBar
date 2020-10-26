@@ -31,9 +31,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	private JSlider pickSlider = new JSlider();
 	private JSlider chchSlider = new JSlider();
 	
-//	public int air=0;
-//	public int pick=0;
-//	public int chch=0;
+
 	
 	private final ToolbarContext context;
 	private ToolbarAPIProvider api ;
@@ -81,26 +79,14 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 		airSlider.setValue(getInstallation().getAir());
 		pickSlider.setValue(getInstallation().getPICK());
 		chchSlider.setValue(getInstallation().getCHCH());
-		//getInstallation().checkInstal(air, pick,chch);
+
 		
 	}
 
 	@Override
 	public void closeView() {
 		
-			//getInstallation().checkInstal(air, pick,chch);
-			
-//			airTextLabel.setText(String.valueOf( getInstallation().airT));
-//			pickTextLabel.setText(String.valueOf( getInstallation().pickT));
-//			chchTextLabel.setText(String.valueOf( getInstallation().chchT));
-//			
-//			airSlider.setValue(getInstallation().airT);
-//			pickSlider.setValue(getInstallation().pickT);
-//			chchSlider.setValue(getInstallation().chchT);
-			//test
-//			airSlider.setValue(0);
-//			pickSlider.setValue(0);
-//			chchSlider.setValue(0);
+
 			
 	}
 	
@@ -147,18 +133,18 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				txt++;
 				
 				if(label==airTextLabel) {
-					//air =txt;
+					
 					getInstallation().onAirValueChange(txt);
 					if(txt>5) txt=5;
 				}
 				if(label==pickTextLabel) {
-					//pick=txt;
+					
 					getInstallation().onPickValueChange(txt);
 					if(txt>20) txt=20;
 				}
 				
 				if(label==chchTextLabel) {
-					//chch=txt;
+					
 					getInstallation().onCHCHValueChange(txt);
 					if(txt>50) txt=50;
 				}
@@ -166,7 +152,7 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				slider.setValue(txt);
 				label.setText(String.valueOf(txt));
 				
-				//getInstallation().checkInstal(air,pick,chch);
+				
 				
 			}
 		});
@@ -182,22 +168,22 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				if(txt<0) txt=0;
 				
 				if(label==airTextLabel) {
-					//air=txt;
+					
 					getInstallation().onAirValueChange(txt);
 				
 				}
 				if(label==pickTextLabel) {
-					//pick= txt;
+					
 					getInstallation().onPickValueChange(txt);
 				}
 				if(label==chchTextLabel) {
-					//chch=txt;
+					
 					getInstallation().onCHCHValueChange(txt);
 				}
 				
 				label.setText(String.valueOf(txt));
 				slider.setValue(txt);
-				//getInstallation().checkInstal(air,pick,chch);
+			
 				
 			}
 		});
@@ -231,20 +217,20 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 				int newValue = slider.getValue();
 				
 				if(label==airTextLabel) {
-					//air= newValue;
+					
 					getInstallation().onAirValueChange(newValue);
 				}
 				if(label==pickTextLabel) {
-					//pick=newValue;
+					
 					getInstallation().onPickValueChange(newValue);
 				}
 				if(label==chchTextLabel) {
-					//chch=newValue;
+					
 					getInstallation().onCHCHValueChange(newValue);
 					}
 				
 				label.setText(String.valueOf(newValue));
-				//getInstallation().checkInstal(air,pick,chch);
+				
 				
 				
 			}
