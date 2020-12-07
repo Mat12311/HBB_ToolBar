@@ -30,6 +30,9 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	private JSlider airSlider = new JSlider();
 	private JSlider pickSlider = new JSlider();
 	private JSlider chchSlider = new JSlider();
+	private  String seria = "20195000394";
+	//private  String seria = "20195599999";
+	private int P =0;
 	
 
 	
@@ -47,31 +50,47 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 	public void buildUI(JPanel panel) {
 		
 		panel.setLayout(new BoxLayout(panel,BoxLayout.Y_AXIS));
+		System.out.println(seria);
+		System.out.println("TEST");
+		System.out.println(0==getInstallation().getSeria().compareTo(seria));
+		
+		if(0!=getInstallation().getSeria().compareTo(seria)) {
+			P=1;
+			Disable();
+			
+			panel.add(createDescrption("SERIA ERROR"));
+			
+			
+		}
+		
 		
 		panel.add(createDescrption("AIR"));
 		//panel.add(createSpacer(5));
-		panel.add(createTextLabelButton(airTextLabel,airSlider));
+		panel.add(createTextLabelButton(airTextLabel,airSlider,P));
 		panel.add(createSpacer(5));
 		panel.add(createSlider(airSlider, 0, 5, airTextLabel));
 		panel.add(createSpacer(5));
 		panel.add(createDescrption("PICK"));
 		//panel.add(createSpacer(5));
-		panel.add(createTextLabelButton(pickTextLabel, pickSlider));
+		panel.add(createTextLabelButton(pickTextLabel, pickSlider,P));
 		panel.add(createSpacer(5));
 		panel.add(createSlider(pickSlider, 0, 20, pickTextLabel));
 		panel.add(createSpacer(5));
 		panel.add(createDescrption("CHCH"));
 		//panel.add(createSpacer(5));
-		panel.add(createTextLabelButton(chchTextLabel, chchSlider));
+		panel.add(createTextLabelButton(chchTextLabel, chchSlider,P));
 		panel.add(createSpacer(5));
 		panel.add(createSlider(chchSlider, 0, 50, chchTextLabel));
 		
+	
 	}
 
 	@Override
 	public void openView() {
+		
+		if(0==getInstallation().getSeria().compareTo(seria)) {
 	
-//	
+	
 		airTextLabel.setText(String.valueOf( getInstallation().getAir()));
 		pickTextLabel.setText(String.valueOf( getInstallation().getPICK()));
 		chchTextLabel.setText(String.valueOf( getInstallation().getCHCH()));
@@ -79,7 +98,21 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 		airSlider.setValue(getInstallation().getAir());
 		pickSlider.setValue(getInstallation().getPICK());
 		chchSlider.setValue(getInstallation().getCHCH());
-
+		}
+		else {
+			
+			
+			
+			airTextLabel.setText("E");
+			pickTextLabel.setText("E");
+			chchTextLabel.setText("E");
+			
+			airSlider.setValue(0);
+			pickSlider.setValue(0);
+			chchSlider.setValue(0);
+			
+		}
+		
 		
 	}
 
@@ -94,19 +127,32 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 		return api.getApplicationAPI().getInstallationNode(ToolbarInstalationNodeContribution.class);
 	}
 	
+	private void Disable() {
+		airSlider.enable(false);
+		airTextLabel.enable(false);
+		
+		pickSlider.setEnabled(false);
+		pickTextLabel.setEnabled(false);
+		
+		chchSlider.setEnabled(false);
+		chchTextLabel.setEnabled(false);
+		
+		
+	}
+	
 	private Box createDescrption(String desc) {
 		Box box = Box.createHorizontalBox();
 		box.setAlignmentX(Component.CENTER_ALIGNMENT);
 		
 		JLabel label = new JLabel(desc);
-		label.setPreferredSize(new Dimension(60,30));
+		label.setPreferredSize(new Dimension(160,30));
 		label.setMaximumSize(label.getPreferredSize());
 		label.setFont(label.getFont().deriveFont(Font.BOLD));
 		box.add(label);
 		return box;
 
 }
-	private Box createTextLabelButton(final JLabel label, final JSlider slider
+	private Box createTextLabelButton(final JLabel label, final JSlider slider, final int P
 			) {
 		Box box = Box.createHorizontalBox();
 		box.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -188,7 +234,10 @@ public class CyclesToolbarContribution implements SwingToolbarContribution {
 			}
 		});
 		
-		
+		if(P==1) {
+			minus.setEnabled(false);
+			plus.setEnabled(false);
+		}
 		
 		box.add(minus);
 		box.add(label);

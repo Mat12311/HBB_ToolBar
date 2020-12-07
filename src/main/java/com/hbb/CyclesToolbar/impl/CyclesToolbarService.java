@@ -17,7 +17,7 @@ public class CyclesToolbarService implements SwingToolbarService {
 
 	@Override
 	public void configureContribution(ToolbarConfiguration configuration) {
-		configuration.setToolbarHeight(250);
+		configuration.setToolbarHeight(280);
 		
 	}
 

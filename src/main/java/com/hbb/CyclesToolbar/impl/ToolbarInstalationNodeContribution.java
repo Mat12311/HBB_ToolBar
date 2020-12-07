@@ -19,14 +19,14 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	private final DataModel model;
 	
 	
-
-	
 	private static final String AIR_KEY = "air";
 	private static final int DEFAULT_AIR = 2;
 	private static final String PICK_KEY = "pick";
 	private static final int DEFAULT_PICK = 5;
 	private static final String CHCH_KEY = "chch";
 	private static final int DEFAULT_CHCH = 10;
+	private  String seria = "20195000394";
+	//private  String seria = "20195599999";
 	
 	public ToolbarInstalationNodeContribution(InstallationAPIProvider apiProvider,
 			ToolbarInstalationNodeView view, DataModel model) {
@@ -34,6 +34,12 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 		this.view = view;
 		this.model=model;
 		
+	}
+	
+	public String getSeria() {
+		String seria = apiProvider.getSystemAPI().getRobotModel().getSerialNumber();
+		System.out.println("SERIA"+seria);
+		return seria;
 	}
 	
 	public void onAirValueChange(int val) {
@@ -91,16 +97,31 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	@Override
 	public void generateScript(ScriptWriter writer) {
 	
-		writer.appendLine("global cpl_airT = "+getAir()+"");
+//		writer.appendLine("global cpl_airT = "+getAir()+"");
+//		
+//		writer.appendLine("global cpl_pickT = "+getPICK()+"");
+//		writer.appendLine("global cpl_chchT = "+getCHCH()+"");
 		
-		writer.appendLine("global cpl_pickT = "+getPICK()+"");
-		writer.appendLine("global cpl_chchT = "+getCHCH()+"");
+		//writer.appendLine("global seria = "+getSeria()+"");
+		if(0!=getSeria().compareTo(seria)) {
+			writer.appendLine("global cpl_airT = False");
+			
+			writer.appendLine("global cpl_pickT = False");
+			writer.appendLine("global cpl_chchT = False");
+			//writer.appendLine("popup('Seria ERROR',title='ERROR',blocking=True)");
+			writer.appendLine("powerdown()");
+			
+			
+		}else {
+			writer.appendLine("global cpl_airT = "+getAir()+"");
+			
+			writer.appendLine("global cpl_pickT = "+getPICK()+"");
+			writer.appendLine("global cpl_chchT = "+getCHCH()+"");
+			
+		}
 		
 				
 	}
 	
-	
-	
-
 
 }
