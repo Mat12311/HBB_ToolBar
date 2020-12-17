@@ -78,6 +78,28 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 		return val;
 	}
 	
+	public int makeCode () {
+		int val =0;
+		int val2 =0;
+		String code;
+		String ser = getSeria();
+		for(int i =0; i<11;i++) {
+			if(i<6) { val=val +Character.getNumericValue(ser.charAt(i));
+			System.out.println("VAL"+val);}
+			if(i>5) {val2=val2+Character.getNumericValue(ser.charAt(i));
+			System.out.println("VAL2"+val2);}
+		}
+		
+		code= Integer.toString(val)+ Integer.toString(val2) + ser.charAt(8);
+		System.out.println("CODE"+code);
+		
+		
+		
+		
+		return Integer.valueOf(code);
+	}
+	
+	
 	
 	
 	
@@ -97,7 +119,7 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 	@Override
 	public void generateScript(ScriptWriter writer) {
 	
-//		writer.appendLine("global cpl_airT = "+getAir()+"");
+		writer.appendLine("global cpl_code = "+makeCode()+"");
 //		
 //		writer.appendLine("global cpl_pickT = "+getPICK()+"");
 //		writer.appendLine("global cpl_chchT = "+getCHCH()+"");
@@ -108,8 +130,9 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 			
 			writer.appendLine("global cpl_pickT = False");
 			writer.appendLine("global cpl_chchT = False");
+			writer.appendLine("global cpl_seria = 0");
 			//writer.appendLine("popup('Seria ERROR',title='ERROR',blocking=True)");
-			writer.appendLine("powerdown()");
+			//writer.appendLine("powerdown()");
 			
 			
 		}else {
@@ -117,6 +140,7 @@ public class ToolbarInstalationNodeContribution implements InstallationNodeContr
 			
 			writer.appendLine("global cpl_pickT = "+getPICK()+"");
 			writer.appendLine("global cpl_chchT = "+getCHCH()+"");
+			writer.appendLine("global cpl_seria = 1");
 			
 		}
 		

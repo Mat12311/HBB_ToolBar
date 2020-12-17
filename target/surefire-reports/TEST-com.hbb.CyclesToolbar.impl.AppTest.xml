@@ -17,7 +17,7 @@
     <property name="user.country" value="US"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64"/>
-    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /home/ur/workspace/com.hbb.CyclesToolbar/target/surefire 2020-12-03T11-28-57_675-jvmRun1 surefire4940961224964341470tmp surefire_02312639710289001746tmp"/>
+    <property name="sun.java.command" value="org.apache.maven.surefire.booter.ForkedBooter /home/ur/workspace/com.hbb.CyclesToolbar/target/surefire 2020-12-17T11-20-41_929-jvmRun1 surefire2201828537846815008tmp surefire_08249113789033349533tmp"/>
     <property name="surefire.test.class.path" value="/home/ur/workspace/com.hbb.CyclesToolbar/target/test-classes:/home/ur/workspace/com.hbb.CyclesToolbar/target/classes:/home/ur/.m2/repository/org/osgi/org.osgi.core/4.3.0/org.osgi.core-4.3.0.jar:/home/ur/.m2/repository/com/ur/urcap/api/1.11.0/api-1.11.0.jar:/home/ur/.m2/repository/junit/junit/4.12/junit-4.12.jar:/home/ur/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="/home/ur"/>
@@ -35,7 +35,7 @@
     <property name="java.runtime.version" value="1.8.0_275-8u275-b01-0ubuntu1~16.04-b01"/>
     <property name="user.name" value="ur"/>
     <property name="path.separator" value=":"/>
-    <property name="os.version" value="4.15.0-123-generic"/>
+    <property name="os.version" value="4.15.0-128-generic"/>
     <property name="java.endorsed.dirs" value="/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/endorsed"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
@@ -57,5 +57,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="testApp" classname="com.hbb.CyclesToolbar.impl.AppTest" time="0.005"/>
+  <testcase name="testApp" classname="com.hbb.CyclesToolbar.impl.AppTest" time="0.002"/>
 </testsuite>
